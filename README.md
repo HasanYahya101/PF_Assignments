@@ -1,4 +1,4 @@
-# Programming Fundamentals Assignments Solutions
+# Programming Fundamentals: Assignments Solutions
 ## Fall 2022 (Fast Nuces Lhr)
 
 This repository contains the solutions to the Programming Fundamentals assignment questions from my lectures at the Fall 2022 semester at FAST NUCES Lhr. These solutions are intended to help students who are struggling with understanding the concepts and solving the assignments.
