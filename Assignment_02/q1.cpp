@@ -3,7 +3,7 @@ using namespace std;
 int main()
 {
 	cout << "Program to Calculate BMI value of User - (BMI = Weight * 703/Height2);" << endl;
-	
+	 
 	cout << "*********************************************" << endl;
 	float weight, height, bmi;
 	cout << "Enter weight in Pounds: ";
