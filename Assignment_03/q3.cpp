@@ -226,3 +226,96 @@ void print_char(char c, int n)
         cout << c;
     }
 }
+
+/*
+for q1: Extra Code:
+#include <iostream>
+using namespace std;
+
+bool print_allowed(int i, int j, int val_temp)
+{
+    if(i > val_temp)
+    {
+        int store = i - val_temp;
+        i = val_temp - store;
+    }
+    bool flag = true;
+    int val = val_temp;
+    if(i == 1 or i == (val_temp * 2) - 1)
+    {
+        return true;
+    }
+    else if (i > 1 and i < (val_temp * 2) - 1)
+    {
+        if(val_temp == j)
+        {
+            return false;
+        }
+        int temp_i = i - 2;
+        if (j > val_temp)
+        {
+            if(j <= temp_i + val_temp)
+            {
+                return false;
+            }
+        }
+        if (j < val_temp)
+        {
+            if(j >= val_temp - temp_i)
+            {
+                return false;
+            }
+        }
+    }
+    return flag;
+}
+
+int main() 
+{
+    int val;
+    cout << "Enter an Integer: ";
+    cin >> val;
+    while (val < 3 or val >9)
+    {
+        cout << "Invalid Input! Enter Value Again (3 to 9): ";
+        cin >> val;
+    }
+    int loop_run = (val * 2) - 1;
+    int val_temp = val;
+    for(int i = 0; i < loop_run; i++)
+    {
+        int printed = 1;
+        bool half = false;
+        int space = 0;
+        
+        for(int j = 0; j < loop_run; j++)
+        {
+            if(print_allowed(i+1, j+1, val_temp) != false)
+            {
+                cout << printed;
+            }
+            else
+            {
+                cout << " ";
+            }
+            
+            if(printed == val)
+            {
+                half = true;
+            }
+            
+            if(half == false)
+            {
+                printed++;
+            }
+            else if(half == true)
+            {
+                printed--;
+            }
+        }
+        cout << endl;
+    }
+
+    return 0;
+}
+*/
