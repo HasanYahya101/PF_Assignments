@@ -228,7 +228,7 @@ void print_char(char c, int n)
 }
 
 /*
-for q1: Extra Code:
+for part1: Extra Code:
 #include <iostream>
 using namespace std;
 
@@ -318,4 +318,90 @@ int main()
 
     return 0;
 }
+
+Second Extra for the same thing:
+
+#include <iostream>
+#include <string>
+#include <cstring>
+using namespace std;
+
+string reverse_string(string input_string, int len_string)
+{
+    string reversed = "";
+    for (int i = len_string - 1; i >= 0; i--)
+    {
+        reversed += input_string[i];
+    }
+    return reversed;
+}
+
+int main()
+{
+
+    int input;
+    bool invalid_condition;
+    do
+    {
+        cout << "Input must be between 3 and 9, inclusive. Enter your input: ";
+        cin >> input;
+        invalid_condition = input < 3 or input > 9;
+        if (invalid_condition)
+        {
+            cout << "Invalid input. Please try again\n";
+        }
+    } while (invalid_condition);
+
+    const int number_of_forward_lines = input;
+    string lines[number_of_forward_lines];
+    int lines_counter = 0;
+
+    int vanish_number_count = 0;
+    string full_line;
+    string half_line;
+
+    // Number of lines to generate
+    for (int i = 1; i <= input; i++)
+    {
+        half_line = "";
+        for (int i = 1; i <= input - vanish_number_count; i++)
+        {
+            half_line += to_string(i);
+        }
+
+        for (int i = 0; i < (vanish_number_count); i++)
+        {
+            half_line += " ";
+        }
+
+        // Remove the final character from the reversed string
+        string reversed_half_line = half_line;
+        reversed_half_line.pop_back();
+        reversed_half_line = reverse_string(reversed_half_line, input);
+
+        full_line = half_line + reversed_half_line;
+
+        lines[lines_counter] = full_line;
+        lines_counter += 1;
+
+        vanish_number_count += 1;
+    }
+
+    // Print the lines (in forward order)
+    for (int i = 0; i < lines_counter; i++)
+    {
+        cout << lines[i];
+        cout << "\n";
+    }
+
+    // Print the lines (in backwards order). Ignore the last line (as that is middle line)
+    for (int i = lines_counter - 2; i >= 0; i--)
+    {
+        cout << lines[i];
+        cout << "\n";
+    }
+
+    return 0;
+}
+
 */
