@@ -5,7 +5,7 @@ using namespace std;
 
 int main()
 {
-	cout << "Random Value shall be generated for each run of Program!!!" << endl;
+	cout << "Random Value shall be generated for each run of Program!!!" << endl; 
 	int lottery[5];
 	int user[5];
 	int match = 0;
